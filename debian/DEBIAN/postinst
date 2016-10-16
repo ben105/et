@@ -1,0 +1,7 @@
+#! /bin/sh
+
+set -e
+
+virtualenv -p /usr/bin/python2.7 --system-site-packages --never-download /opt/et/venv
+/opt/et/venv/bin/pip install --no-deps --no-index /opt/et/venv_third_party/*
+cp /opt/et/bin/* /opt/et/venv/bin/

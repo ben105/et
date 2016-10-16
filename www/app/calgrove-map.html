@@ -1,0 +1,28 @@
+<link rel="import" href="../bower_components/google-map/google-map.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<dom-module id="calgrove-map">
+	<style>
+		google-map {
+			height: 1000px;
+			width: 100%;
+		}
+	</style>
+
+<template>
+	<google-map id="map" map="{{map}}" latitude="39.7392" longitude="-104.9903" api-key="AIzaSyDpJeQU3tq1qWdnfu_IpdcxUwge5ZgbJ9E" fit-to-markers="true">
+	<!--
+		<template is="dom-repeat" items="{{places}}">
+			<google-map-marker map="[[map]]" latitude="{{item.lat}}" longitude="{{item.lon}}" title="{{item.count}}"></google-map-marker>
+		</template>
+	-->
+	</google-map>
+	<iron-ajax
+		id="XhrIO"
+    		auto
+    		url="http://ec2-54-188-199-29.us-west-2.compute.amazonaws.com:9999/api/traffic"
+    		handle-as="json"
+    		on-response="handleResponse"
+    		debounce-duration="300"></iron-ajax>	
+</template>
+<script src="calgrove-map.js"></script>
+</dom-module>

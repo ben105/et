@@ -1,0 +1,3 @@
+#! /bin/sh
+
+/opt/et/venv/bin/python /opt/et/venv/bin/sniffer.py $@
